@@ -23,19 +23,18 @@
     body{background:#fff;min-height:100vh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#333;-webkit-font-smoothing:antialiased}
 
     /* Top bar */
-    .top-bar{background:#d32f2f;padding:10px 16px;text-align:center}
-    .top-bar h1{font-size:22px;font-weight:800;color:#fff;letter-spacing:3px;text-transform:uppercase}
+    .top-bar{background:#d32f2f;padding:10px 16px 0;text-align:center}
+    .top-bar h1{font-size:22px;font-weight:800;color:#fff;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px}
+    .ticker{overflow:hidden;white-space:nowrap;background:#d32f2f;padding-bottom:8px}
+    .ticker-track{display:inline-block;animation:scroll-left 28s linear infinite;font-size:12px;font-weight:600;color:#fff;letter-spacing:1px;text-transform:uppercase;opacity:.95}
+    .ticker-track span{margin:0 24px}
+    @keyframes scroll-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
     /* Byline */
-    .byline{max-width:700px;margin:0 auto;padding:14px 20px 0;display:flex;align-items:center;gap:12px;font-size:13px;color:#555}
+    .byline{max-width:700px;margin:0 auto;padding:18px 20px 8px;display:flex;align-items:center;gap:12px;font-size:13px;color:#555}
     .byline .author{font-weight:700;color:#1a1a1a}
     .byline .sep{color:#ccc}
     .byline .date{color:#888}
-
-    /* Headline */
-    .headline{max-width:700px;margin:0 auto;padding:10px 20px 8px;text-align:left}
-    .headline h2{font-size:22px;font-weight:800;color:#1a1a1a;line-height:1.25;letter-spacing:-0.3px}
-    .headline h2 span{color:#d32f2f}
 
     /* Video */
     .video-section{display:flex;justify-content:center;padding:16px 20px 24px}
@@ -51,14 +50,7 @@
     .comments-header .count{font-size:13px;color:#888}
     .comment{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0f0f0}
     .comment:last-child{border-bottom:none}
-    .avatar{width:40px;height:40px;border-radius:50%;background:#d32f2f;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0;text-transform:uppercase}
-    .avatar.c2{background:#1976d2}
-    .avatar.c3{background:#388e3c}
-    .avatar.c4{background:#f57c00}
-    .avatar.c5{background:#7b1fa2}
-    .avatar.c6{background:#c2185b}
-    .avatar.c7{background:#0097a7}
-    .avatar.c8{background:#5d4037}
+    .avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#e5e5e5}
     .comment-body{flex:1;min-width:0}
     .comment-name{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px}
     .comment-text{font-size:14px;color:#333;line-height:1.5;margin-bottom:6px;word-wrap:break-word}
@@ -88,17 +80,22 @@
   <div class="top-bar">
     <h1>Gesundheit</h1>
   </div>
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Tägliche Updates zu Wellness und Gesundheit</span>
+      <span>Tägliche Updates zu Wellness und Gesundheit</span>
+      <span>Tägliche Updates zu Wellness und Gesundheit</span>
+      <span>Tägliche Updates zu Wellness und Gesundheit</span>
+      <span>Tägliche Updates zu Wellness und Gesundheit</span>
+      <span>Tägliche Updates zu Wellness und Gesundheit</span>
+    </div>
+  </div>
 
   <!-- Byline -->
   <div class="byline">
     <span class="author">Dr. Peter Hoffmann</span>
     <span class="sep">•</span>
     <span class="date" id="date">Aktualisiert vor 30 Minuten</span>
-  </div>
-
-  <!-- Headline -->
-  <div class="headline">
-    <h2>Dr. Hoffmann enthüllt das <span>uralte Wasserritual</span>, das Männern hilft, den nächtlichen Harndrang zu beenden und die Prostata zu unterstützen</h2>
   </div>
 
   <!-- Video -->
@@ -119,7 +116,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar">HM</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/30.jpg" alt="Hans Müller" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Hans Müller</div>
         <div class="comment-text">Ich dachte, es wäre wieder so ein langes, langweiliges Video. Glückwunsch, Dr. Peter Hoffmann, dass Sie etwas teilen, das wirklich FUNKTIONIERT!</div>
@@ -128,7 +125,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c2">KW</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/33.jpg" alt="Klaus Weber" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Klaus Weber</div>
         <div class="comment-text">Dr. Hoffmann ist einfach unglaublichhh 👏</div>
@@ -137,7 +134,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c3">FB</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/40.jpg" alt="Friedrich Bauer" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Friedrich Bauer</div>
         <div class="comment-text">Er ist wirklich ein Wunderdoktor. Ich habe dieses Rezept ausprobiert und spüre schon viel weniger Druck da unten.</div>
@@ -146,7 +143,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c4">GS</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Günter Schmidt" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Günter Schmidt</div>
         <div class="comment-text">Genau!! Ich muss nachts viel seltener auf die Toilette und schlafe endlich wieder durch, wissen Sie?</div>
@@ -155,7 +152,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c5">DH</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/50.jpg" alt="Dieter Hoffmann" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Dieter Hoffmann</div>
         <div class="comment-text">Genauso bei mir! Ich wache nicht mehr 4 Mal pro Nacht auf, ich fühle mich jetzt 30 Jahre jünger 😂</div>
@@ -164,7 +161,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c6">BF</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Bernd Fischer" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Bernd Fischer</div>
         <div class="comment-text">Ich weiß nicht, Leute, ist das seriös oder nur Marketing-Gerede??</div>
@@ -173,7 +170,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c7">WS</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/55.jpg" alt="Wolfgang Schäfer" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Wolfgang Schäfer</div>
         <div class="comment-text">Bernd, ich war auch sehr skeptisch, aber es ist echt. Probier es ein paar Tage aus und schau selbst. Ich war schockiert, wie schnell sich der Harnfluss verbessert hat und der Harndrang nachgelassen hat…</div>
@@ -182,7 +179,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c8">RZ</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/60.jpg" alt="Rolf Zimmermann" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Rolf Zimmermann</div>
         <div class="comment-text">Genauso, ich zögerte auch, aber der ständige Harndrang wurde unerträglich. Damit ihr es wisst: Ich konnte kaum das Haus verlassen, ohne mir Sorgen um eine Toilette zu machen — dieses Video von Dr. Peter Hoffmann hat mir endlich Erleichterung gebracht.</div>
@@ -191,7 +188,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar">MB</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/65.jpg" alt="Manfred Braun" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Manfred Braun</div>
         <div class="comment-text">Glückwunsch, Dr. Peter Hoffmann! Bei so vielen Betrügereien im Internet ist es selten, etwas wirklich Hilfreiches zu sehen. Sie verdienen jeden Erfolg 👏👏</div>
@@ -200,7 +197,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c2">HK</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/70.jpg" alt="Helmut Krause" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Helmut Krause</div>
         <div class="comment-text">Dr. Hoffmann, ich folge Ihnen seit Jahren, aber dieses Rezept-Geheimnis ist bei weitem Ihr bester Tipp. Ich mache es seit 3 Monaten täglich und meine Prostata war noch nie so gut 😂😂</div>
@@ -209,7 +206,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c3">SN</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Siegfried Neumann" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Siegfried Neumann</div>
         <div class="comment-text">Gut, dass ich das Video bis zum Ende geschaut habe! Ich dachte, es könnte wieder ein Internetgag sein, aber wow, es ist echt. Ich fange morgen mit dem Rezept an 😙</div>
@@ -218,7 +215,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c4">HL</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/80.jpg" alt="Hartmut Lang" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Hartmut Lang</div>
         <div class="comment-text">Was genau ist dieses Rezept?</div>
@@ -227,7 +224,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c5">OR</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/82.jpg" alt="Otmar Richter" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Otmar Richter</div>
         <div class="comment-text">Er erklärt es gleich am Anfang. Das ist es, was die Prostata-Entzündung und den ständigen Harndrang beseitigt hat, der durch diese stille Hormonentgleisung verursacht wurde 😍</div>
@@ -236,7 +233,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c6">RV</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/85.jpg" alt="Reinhard Vogel" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Reinhard Vogel</div>
         <div class="comment-text">Bei mir war es genauso!!</div>
@@ -245,7 +242,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c4">HL</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/80.jpg" alt="Hartmut Lang" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Hartmut Lang</div>
         <div class="comment-text">Toll, danke für den Hinweis. Ich werde es definitiv ausprobieren!</div>
@@ -254,7 +251,7 @@
     </div>
 
     <div class="comment">
-      <div class="avatar c7">BK</div>
+      <img class="avatar" src="https://randomuser.me/api/portraits/men/88.jpg" alt="Bernhard König" loading="lazy" width="44" height="44">
       <div class="comment-body">
         <div class="comment-name">Bernhard König</div>
         <div class="comment-text">Dr. Peter Hoffmann, Sie sind WUNDERBAR! Die Prostataprobleme meines Vaters haben sich dadurch enorm verbessert!! Ich habe Ihr Video an die ganze Familie und Freunde weitergeleitet.</div>
