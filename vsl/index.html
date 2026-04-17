@@ -43,21 +43,25 @@
     /* Divider */
     .divider{max-width:700px;margin:0 auto;border-top:1px solid #e5e5e5}
 
-    /* Comments */
-    .comments{max-width:700px;margin:0 auto;padding:32px 20px 48px}
-    .comments-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #e5e5e5}
-    .comments-header h3{font-size:16px;font-weight:700;color:#1a1a1a}
-    .comments-header .count{font-size:13px;color:#888}
-    .comment{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #f0f0f0}
-    .comment:last-child{border-bottom:none}
-    .avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#e5e5e5}
+    /* Comments - Facebook style */
+    .comments{max-width:700px;margin:0 auto;padding:24px 16px 48px}
+    .comments-header{font-size:15px;font-weight:600;color:#65676b;margin-bottom:16px}
+    .comment{display:flex;gap:8px;padding:8px 0;align-items:flex-start}
+    .avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0;background:#e4e6eb}
     .comment-body{flex:1;min-width:0}
-    .comment-name{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px}
-    .comment-text{font-size:14px;color:#333;line-height:1.5;margin-bottom:6px;word-wrap:break-word}
-    .comment-meta{display:flex;align-items:center;gap:14px;font-size:12px;color:#888}
-    .like{display:inline-flex;align-items:center;gap:4px;cursor:pointer;color:#1877f2;font-weight:600}
-    .like svg{width:14px;height:14px;fill:currentColor}
-    .reply{cursor:pointer}
+    .comment-bubble{display:inline-block;max-width:100%;background:#f0f2f5;border-radius:18px;padding:8px 12px;position:relative}
+    .comment-name{font-size:13px;font-weight:600;color:#050505;margin-bottom:2px}
+    .comment-text{font-size:14px;color:#050505;line-height:1.4;word-wrap:break-word;word-break:break-word}
+    .comment-meta{display:flex;align-items:center;gap:14px;font-size:12px;color:#65676b;margin-top:4px;padding:0 12px;font-weight:600}
+    .comment-meta .act{cursor:pointer}
+    .comment-meta .act:hover{text-decoration:underline}
+    .comment-meta .time{font-weight:400}
+    .comment-reactions{display:inline-flex;align-items:center;gap:2px;background:#fff;border:1px solid #e4e6eb;border-radius:10px;padding:1px 6px 1px 2px;font-size:12px;color:#65676b;margin-left:auto;box-shadow:0 1px 1px rgba(0,0,0,0.05)}
+    .comment-reactions .emoji{font-size:12px;line-height:1;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%}
+    .comment-reactions .emoji.like{background:linear-gradient(180deg,#2e89ff 0%,#0866ff 100%);color:#fff}
+    .comment-reactions .emoji.heart{background:linear-gradient(180deg,#ff7384 0%,#f33e58 100%);color:#fff;margin-left:-4px}
+    .comment-reactions .count{margin-left:2px}
+    .comment-row{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
 
     /* Footer */
     .site-footer{background:#f5f5f5;border-top:1px solid #e5e5e5;padding:28px 20px;text-align:center}
@@ -110,152 +114,229 @@
 
   <!-- Comments -->
   <div class="comments">
-    <div class="comments-header">
-      <h3>Kommentare</h3>
-      <span class="count">17 Kommentare</span>
-    </div>
+    <div class="comments-header">1.247 Kommentare</div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/01.jpg" alt="Hans Müller" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/01.jpg" alt="Hans Müller" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Hans Müller</div>
-        <div class="comment-text">Ich dachte, es wäre wieder so ein langes, langweiliges Video. Glückwunsch, Dr. Peter Hoffmann, dass Sie etwas teilen, das wirklich FUNKTIONIERT!</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 41</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Hans Müller</div>
+            <div class="comment-text">Ich dachte, es wäre wieder so ein langes, langweiliges Video. Glückwunsch, Dr. Peter Hoffmann, dass Sie etwas teilen, das wirklich FUNKTIONIERT!</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">41</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">12 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/02.jpg" alt="Klaus Weber" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/02.jpg" alt="Klaus Weber" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Klaus Weber</div>
-        <div class="comment-text">Dr. Hoffmann ist einfach unglaublichhh 👏</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 52</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Klaus Weber</div>
+            <div class="comment-text">Dr. Hoffmann ist einfach unglaublichhh 👏</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">52</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">11 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/03.jpg" alt="Friedrich Bauer" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/03.jpg" alt="Friedrich Bauer" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Friedrich Bauer</div>
-        <div class="comment-text">Er ist wirklich ein Wunderdoktor. Ich habe dieses Rezept ausprobiert und spüre schon viel weniger Druck da unten.</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 68</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Friedrich Bauer</div>
+            <div class="comment-text">Er ist wirklich ein Wunderdoktor. Ich habe dieses Rezept ausprobiert und spüre schon viel weniger Druck da unten.</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">68</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">10 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/04.jpg" alt="Günter Schmidt" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/04.jpg" alt="Günter Schmidt" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Günter Schmidt</div>
-        <div class="comment-text">Genau!! Ich muss nachts viel seltener auf die Toilette und schlafe endlich wieder durch, wissen Sie?</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 57</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Günter Schmidt</div>
+            <div class="comment-text">Genau!! Ich muss nachts viel seltener auf die Toilette und schlafe endlich wieder durch, wissen Sie?</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">57</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">9 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/05.jpg" alt="Dieter Hoffmann" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/05.jpg" alt="Dieter Hoffmann" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Dieter Hoffmann</div>
-        <div class="comment-text">Genauso bei mir! Ich wache nicht mehr 4 Mal pro Nacht auf, ich fühle mich jetzt 30 Jahre jünger 😂</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 33</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Dieter Hoffmann</div>
+            <div class="comment-text">Genauso bei mir! Ich wache nicht mehr 4 Mal pro Nacht auf, ich fühle mich jetzt 30 Jahre jünger 😂</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">33</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">8 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/06.jpg" alt="Bernd Fischer" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/06.jpg" alt="Bernd Fischer" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Bernd Fischer</div>
-        <div class="comment-text">Ich weiß nicht, Leute, ist das seriös oder nur Marketing-Gerede??</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 25</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Bernd Fischer</div>
+            <div class="comment-text">Ich weiß nicht, Leute, ist das seriös oder nur Marketing-Gerede??</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">25</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">7 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/07.jpg" alt="Wolfgang Schäfer" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/07.jpg" alt="Wolfgang Schäfer" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Wolfgang Schäfer</div>
-        <div class="comment-text">Bernd, ich war auch sehr skeptisch, aber es ist echt. Probier es ein paar Tage aus und schau selbst. Ich war schockiert, wie schnell sich der Harnfluss verbessert hat und der Harndrang nachgelassen hat…</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 44</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Wolfgang Schäfer</div>
+            <div class="comment-text">Bernd, ich war auch sehr skeptisch, aber es ist echt. Probier es ein paar Tage aus und schau selbst. Ich war schockiert, wie schnell sich der Harnfluss verbessert hat und der Harndrang nachgelassen hat…</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">44</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">7 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/08.jpg" alt="Rolf Zimmermann" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/08.jpg" alt="Rolf Zimmermann" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Rolf Zimmermann</div>
-        <div class="comment-text">Genauso, ich zögerte auch, aber der ständige Harndrang wurde unerträglich. Damit ihr es wisst: Ich konnte kaum das Haus verlassen, ohne mir Sorgen um eine Toilette zu machen — dieses Video von Dr. Peter Hoffmann hat mir endlich Erleichterung gebracht.</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 39</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Rolf Zimmermann</div>
+            <div class="comment-text">Genauso, ich zögerte auch, aber der ständige Harndrang wurde unerträglich. Damit ihr es wisst: Ich konnte kaum das Haus verlassen, ohne mir Sorgen um eine Toilette zu machen — dieses Video von Dr. Peter Hoffmann hat mir endlich Erleichterung gebracht.</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">39</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">6 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/09.jpg" alt="Manfred Braun" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/09.jpg" alt="Manfred Braun" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Manfred Braun</div>
-        <div class="comment-text">Glückwunsch, Dr. Peter Hoffmann! Bei so vielen Betrügereien im Internet ist es selten, etwas wirklich Hilfreiches zu sehen. Sie verdienen jeden Erfolg 👏👏</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 72</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Manfred Braun</div>
+            <div class="comment-text">Glückwunsch, Dr. Peter Hoffmann! Bei so vielen Betrügereien im Internet ist es selten, etwas wirklich Hilfreiches zu sehen. Sie verdienen jeden Erfolg 👏👏</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">72</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">6 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/10.jpg" alt="Helmut Krause" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/10.jpg" alt="Helmut Krause" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Helmut Krause</div>
-        <div class="comment-text">Dr. Hoffmann, ich folge Ihnen seit Jahren, aber dieses Rezept-Geheimnis ist bei weitem Ihr bester Tipp. Ich mache es seit 3 Monaten täglich und meine Prostata war noch nie so gut 😂😂</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 44</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Helmut Krause</div>
+            <div class="comment-text">Dr. Hoffmann, ich folge Ihnen seit Jahren, aber dieses Rezept-Geheimnis ist bei weitem Ihr bester Tipp. Ich mache es seit 3 Monaten täglich und meine Prostata war noch nie so gut 😂😂</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">44</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">5 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/11.jpg" alt="Siegfried Neumann" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/11.jpg" alt="Siegfried Neumann" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Siegfried Neumann</div>
-        <div class="comment-text">Gut, dass ich das Video bis zum Ende geschaut habe! Ich dachte, es könnte wieder ein Internetgag sein, aber wow, es ist echt. Ich fange morgen mit dem Rezept an 😙</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 12</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Siegfried Neumann</div>
+            <div class="comment-text">Gut, dass ich das Video bis zum Ende geschaut habe! Ich dachte, es könnte wieder ein Internetgag sein, aber wow, es ist echt. Ich fange morgen mit dem Rezept an 😙</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">12</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">4 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/12.jpg" alt="Hartmut Lang" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/12.jpg" alt="Hartmut Lang" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Hartmut Lang</div>
-        <div class="comment-text">Was genau ist dieses Rezept?</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 5</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Hartmut Lang</div>
+            <div class="comment-text">Was genau ist dieses Rezept?</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="count">5</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">4 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/13.jpg" alt="Otmar Richter" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/13.jpg" alt="Otmar Richter" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Otmar Richter</div>
-        <div class="comment-text">Er erklärt es gleich am Anfang. Das ist es, was die Prostata-Entzündung und den ständigen Harndrang beseitigt hat, der durch diese stille Hormonentgleisung verursacht wurde 😍</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 20</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Otmar Richter</div>
+            <div class="comment-text">Er erklärt es gleich am Anfang. Das ist es, was die Prostata-Entzündung und den ständigen Harndrang beseitigt hat, der durch diese stille Hormonentgleisung verursacht wurde 😍</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">20</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">3 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/01.jpg" alt="Reinhard Vogel" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/01.jpg" alt="Reinhard Vogel" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Reinhard Vogel</div>
-        <div class="comment-text">Bei mir war es genauso!!</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 8</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Reinhard Vogel</div>
+            <div class="comment-text">Bei mir war es genauso!!</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="count">8</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">3 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/12.jpg" alt="Hartmut Lang" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/12.jpg" alt="Hartmut Lang" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Hartmut Lang</div>
-        <div class="comment-text">Toll, danke für den Hinweis. Ich werde es definitiv ausprobieren!</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 15</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Hartmut Lang</div>
+            <div class="comment-text">Toll, danke für den Hinweis. Ich werde es definitiv ausprobieren!</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="count">15</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">2 Std.</span></div>
       </div>
     </div>
 
     <div class="comment">
-      <img class="avatar" src="/vsl/avatars/02.jpg" alt="Bernhard König" loading="lazy" width="44" height="44">
+      <img class="avatar" src="/vsl/avatars/02.jpg" alt="Bernhard König" loading="lazy" width="40" height="40">
       <div class="comment-body">
-        <div class="comment-name">Bernhard König</div>
-        <div class="comment-text">Dr. Peter Hoffmann, Sie sind WUNDERBAR! Die Prostataprobleme meines Vaters haben sich dadurch enorm verbessert!! Ich habe Ihr Video an die ganze Familie und Freunde weitergeleitet.</div>
-        <div class="comment-meta"><span class="like"><svg viewBox="0 0 24 24"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg> 29</span><span class="reply">Antworten</span></div>
+        <div class="comment-row">
+          <div class="comment-bubble">
+            <div class="comment-name">Bernhard König</div>
+            <div class="comment-text">Dr. Peter Hoffmann, Sie sind WUNDERBAR! Die Prostataprobleme meines Vaters haben sich dadurch enorm verbessert!! Ich habe Ihr Video an die ganze Familie und Freunde weitergeleitet.</div>
+          </div>
+          <div class="comment-reactions"><span class="emoji like">👍</span><span class="emoji heart">❤</span><span class="count">29</span></div>
+        </div>
+        <div class="comment-meta"><span class="act">Gefällt mir</span><span class="act">Antworten</span><span class="time">1 Std.</span></div>
       </div>
     </div>
 
